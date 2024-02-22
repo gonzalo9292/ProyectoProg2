@@ -30,6 +30,7 @@ public class VentanaPrincipal extends JFrame{
 				(int) ((Toolkit.getDefaultToolkit().getScreenSize().getHeight() - getHeight()) / 2));
 		
 		
+		
 		JPanel panelInicial = new JPanel();
 		JPanel panelCentral = new JPanel(new GridLayout(1,2));
 		
