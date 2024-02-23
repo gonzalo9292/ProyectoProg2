@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -15,15 +16,16 @@ import javax.swing.SwingUtilities;
 
 public class VentanaIniciarSesion extends JFrame{
 	
-public VentanaIniciarSesion() {
+ public VentanaIniciarSesion() {
 	
-	
-	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	setSize(800, 600);
-	setTitle("BibliotecaOnline");
-	setVisible(true);
-	setLocation(	(int) ((Toolkit.getDefaultToolkit().getScreenSize().getWidth() - getWidth()) / 2),  
-			(int) ((Toolkit.getDefaultToolkit().getScreenSize().getHeight() - getHeight()) / 2));
+			
+			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			setSize(800, 600);
+			setTitle("BibliotecaOnline");
+			setVisible(true);
+			setLocation(	(int) ((Toolkit.getDefaultToolkit().getScreenSize().getWidth() - getWidth()) / 2),  
+					(int) ((Toolkit.getDefaultToolkit().getScreenSize().getHeight() - getHeight()) / 2));
+			
 	
 
 			JPanel panelIniciarSesion  = new JPanel();
@@ -61,12 +63,12 @@ public VentanaIniciarSesion() {
 			panelBotones.add(bInicioSecion);
 }
 
-public static void main(String[] args) {
-	SwingUtilities.invokeLater(new Runnable() {
+            public static void main(String[] args) {
+	        SwingUtilities.invokeLater(new Runnable() {
 		
-		@Override
-		public void run() {
-			new VentanaIniciarSesion();
+		      @Override
+		     public void run() {
+		   	new VentanaIniciarSesion();
 			
 		}
 	});

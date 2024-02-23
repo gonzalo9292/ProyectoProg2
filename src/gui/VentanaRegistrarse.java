@@ -41,9 +41,9 @@ public class VentanaRegistrarse extends JFrame{
 			Font fuente = new Font("Arial",Font.BOLD,40);
 	        Registrarse.setFont(fuente);
 			JLabel DNI = new JLabel            ("       DNI :");
-			JLabel Nombre = new JLabel         ("      Nombre :");
+			JLabel Nombre = new JLabel         ("  Nombre :");
 			JLabel Apellido = new JLabel       ("    Apellidos :");
-			JLabel FechaNacimiento = new JLabel("Fecha de Nacimiento :");
+			JLabel FechaNacimiento = new JLabel(  "Fecha de Nacimiento :"         );
 			JLabel Usuario = new JLabel        ("     Nombre de Usuario:");
 			JLabel Contraseña = new JLabel     ("                    Contraseña:");
 			
@@ -62,7 +62,7 @@ public class VentanaRegistrarse extends JFrame{
 		
 			JCheckBox pol = new JCheckBox("He leido y acepto la politica de privacidad");
 				pol.setSelected(false);
-				pol.setEnabled(false);
+				pol.setEnabled(true);
 				
 			JPanel central = new JPanel();
 			
