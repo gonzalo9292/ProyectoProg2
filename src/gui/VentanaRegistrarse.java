@@ -38,14 +38,14 @@ public class VentanaRegistrarse extends JFrame{
 			setVisible(true);
 			
 			JLabel Registrarse = new JLabel            ("   Registrarse");
-			Font fuente = new Font("Arial",Font.BOLD,40);
+			Font fuente = new Font("Arial",Font.BOLD,30);
 	        Registrarse.setFont(fuente);
-			JLabel DNI = new JLabel            ("       DNI :");
-			JLabel Nombre = new JLabel         ("  Nombre :");
-			JLabel Apellido = new JLabel       ("    Apellidos :");
-			JLabel FechaNacimiento = new JLabel(  "Fecha de Nacimiento :"         );
-			JLabel Usuario = new JLabel        ("     Nombre de Usuario:");
-			JLabel Contraseña = new JLabel     ("                    Contraseña:");
+			JLabel DNI = new JLabel            ("DNI :");
+			JLabel Nombre = new JLabel         ("Nombre :");
+			JLabel Apellido = new JLabel       ("Apellidos :");
+			JLabel FechaNacimiento = new JLabel("Fecha de Nacimiento:");
+			JLabel Usuario = new JLabel        ("Nombre de Usuario:");
+			JLabel Contraseña = new JLabel     ("Contraseña:");
 			
 			JTextField txtDNI = new JTextField(15);
 			JTextField txtNombre= new JTextField(15);
