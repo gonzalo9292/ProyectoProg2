@@ -1,10 +1,12 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
@@ -47,7 +49,7 @@ public class AlquilarProductos extends JFrame{
 			
 			 JMenuBar menuBar = new JMenuBar();
 			 menuBar.setLayout(new FlowLayout(FlowLayout.LEFT));
-			JMenu menu = new JMenu("Productos");
+			JMenu menu = new JMenu("Productos Dsiponibles:");
 			JMenuItem libros = new JMenuItem("Libros");
 			JMenuItem juegos = new JMenuItem("Juegos");
 			JMenuItem peliculas = new JMenuItem("Peliculas");
@@ -60,7 +62,14 @@ public class AlquilarProductos extends JFrame{
 		     setJMenuBar(menuBar);
 		     
 			JLabel label = new JLabel("ALQUILAR PRODUCTOS");
+		   	Font fuente = new Font("Arial",Font.BOLD,18);
+	        label.setFont(fuente);
 			JButton alquilar = new JButton("Alquilar");
+			ImageIcon icono = new ImageIcon("iconos/carrito.png");
+			alquilar.setIcon(icono);
+			alquilar.setBackground(Color.white);
+			
+			
 			label.setLayout(new FlowLayout(FlowLayout.CENTER));
 			panelPrincipal.add(panelNorte,BorderLayout.NORTH);
 			panelNorte.add(menuBar);
