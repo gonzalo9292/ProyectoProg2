@@ -1,9 +1,15 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,7 +17,10 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
@@ -32,12 +41,12 @@ public class VentanaRegistrarse extends JFrame{
 	public VentanaRegistrarse() {
 		
 			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			setSize(400, 500);
+			setSize(700, 500);
 			setTitle("Sing Up");
 			setLocationRelativeTo(null);
 			setVisible(true);
 			
-			JLabel Registrarse = new JLabel            ("   Registrarse");
+			JLabel Registrarse = new JLabel            ("Registrarse");
 			Font fuente = new Font("Arial",Font.BOLD,30);
 	        Registrarse.setFont(fuente);
 			JLabel DNI = new JLabel            ("DNI :");
@@ -134,9 +143,53 @@ public class VentanaRegistrarse extends JFrame{
 			
 			
 								
-			btnRegistro.setEnabled(false);
+			btnRegistro.setEnabled(true);
 			String fecha= "yyyy-MM-dd";
 			txtFecha.setText(fecha);
+			
+			
+			
+			PoliticaDePrivacidad.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+
+					 StringBuilder texto = new StringBuilder();
+				     try (BufferedReader br = new BufferedReader(new FileReader("data/Politica De privacidad.txt"))) {
+				           String linea;
+				           while ((linea = br.readLine()) != null) {
+				            texto.append(linea).append("\n");
+				            }
+				            
+				            JTextArea textarea = new JTextArea(texto.toString());
+							textarea.setEditable(false);
+							textarea.setLineWrap(true);
+							textarea.setWrapStyleWord(true);
+							JScrollPane scroll = new JScrollPane(textarea);
+							scroll.setPreferredSize(new Dimension(500,400));
+							JOptionPane.showMessageDialog(null, scroll, "Politica de privacidad", JOptionPane.INFORMATION_MESSAGE);
+							
+				}catch(IOException ex) {
+					ex.getStackTrace();
+				}
+				
+				}
+			});
+			
+			
+			
+			btnRegistro.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					if(!pol.isSelected()) {
+						JOptionPane.showMessageDialog(null, "Debes aceptar los terminos antes de registrarte", "Cuidado!", JOptionPane.WARNING_MESSAGE);
+					}
+					
+				}
+			});
 	
 
 }

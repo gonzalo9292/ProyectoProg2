@@ -20,7 +20,7 @@ public class VentanaIniciarSesion extends JFrame{
 	
 			
 			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			setSize(800, 600);
+			setSize(700, 500);
 			setTitle("BibliotecaOnline");
 			setVisible(true);
 			setLocation(	(int) ((Toolkit.getDefaultToolkit().getScreenSize().getWidth() - getWidth()) / 2),  
